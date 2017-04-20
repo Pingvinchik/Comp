@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-04-20T22:29:57+04:00
+
+====== DispatcherServlet ======
+Created Четверг 20 Апрель 2017
+
+Это front controller, который делегирует [[Controller|controller]]
+
+С помощью handler mappings определяет где буде следующая остановка запроса. 

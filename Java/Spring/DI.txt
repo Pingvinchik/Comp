@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-04-16T18:29:20+04:00
+
+====== DI ======
+Created Воскресенье 16 Апрель 2017
+
+По умолчанию все бины singleton

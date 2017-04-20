@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-04-16T18:29:25+04:00
+
+====== XML ======
+Created Воскресенье 16 Апрель 2017
+
+Можно просто прописать в xml  
+
+<bean id = "..." class = "...">
+	  <!-- collaborators and configuration for this bean go here -->
+</bean>
+
+И потом либо через конструктор, либо через setter Inject
+
+В параметры можно добавить <constructor-arg ref="..." [[/>]]
+Аналогично <c: argumentname -ref="..."/>
+
+В случае когда нужно передать в конструктор просто значение <constructor-arg value="The Beatles" [[/>]]
+Аналогично <c:_title="Sgt. Pepper's Lonely Hearts Club Band"/>
+
+Можно также предать лист <constructor-arg>
+							<list>
+								<value> </value>
+							</list>
+						</constructor-arg>
+Тоже самое можно сделать с set
+Аналогично <util:constant>, <util:list>, <util:map>, <util:properties>, <util:set>
+
+Поля можно также вставлять <p: propertyname -ref="..." />
+
+<context:component-scan base-package="some_package"[[/>]] в конфигурационном xml говорит чтобы Spring искал там компоненты для которых нужно создать bean.
+
+<import resource=""/> для объединения конфигураций
+
+А для добавления к xml конфигурации JavaConfig нужно добавить его bean.

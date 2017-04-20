@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-04-20T19:25:40+04:00
+
+====== Environment ======
+Created Четверг 20 Апрель 2017
+
+Можно подгружать файл со свойствами используя @PropertySource("classpath:/com/soundsystem/app.properties")
+и затем брать env.getProperty(propName)

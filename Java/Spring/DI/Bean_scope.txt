@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-04-20T00:06:41+04:00
+
+====== Bean scope ======
+Created Четверг 20 Апрель 2017
+
+По умолчанию все бины являются singleton.
+
+Существуют варианты:
+	Singleton	
+	Prototype - новый бин создается каждый раз при Inject
+	Session
+	Request
+
+Можно выбрать @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) вместе с @Component или @Bean
+
+Или scope="prototype" [[/>]] в XML
+
+В случае, когда в бин, который является singleton Inject session или request бин возникает ситуация, что последний еще не создан. Тем более если при каждом запросе или пользователе, должен создаваться новый.
+
+Для этого использую proxy @Scope(
+							value=WebApplicationContext.SCOPE_SESSION,
+							proxyMode=ScopedProxyMode.INTERFACES)
+							
+Которая, после того как настоящий бин создастся, делегируется ему.
+
+Если же бин является конкреным классом, используем ScopedProxyMode.TARGET_CLASS
+
+<aop:scoped-proxy [[/>]] в XML для target class или <aop:scoped-proxy proxy-target-class="false" [[/>]] для интерфейса
+

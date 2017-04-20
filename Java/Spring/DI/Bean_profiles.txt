@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-04-19T22:25:10+04:00
+
+====== Bean profiles ======
+Created Среда 19 Апрель 2017
+
+В JavaConfig можно использовать @Profile
+
+Например 
+
+@Configuration
+@Profile("dev")
+public class DevelopmentProfileConfig {
+	@Bean(destroyMethod="shutdown")
+	public DataSource dataSource() {
+		return new EmbeddedDatabaseBuilder()
+		.setType(EmbeddedDatabaseType.H2)
+		.addScript("classpath:schema.sql")
+		.addScript("classpath:test-data.sql")
+		.build();
+	}
+}
+
+В XML можно <beans profile="dev">
+
+Установить профиль можно в web.xml
+
+<context-param>
+	<param-name>spring.profiles.default</param-name>
+	<param-value>dev</param-value>
+</context-param>
+
+<init-param>
+	<param-name>spring.profiles.default</param-name>
+	<param-value>dev</param-value>
+</init-param>
