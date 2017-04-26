@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-04-20T23:47:22+04:00
+
+====== WebConfig ======
+Created Четверг 20 Апрель 2017
+
+Подгружает бины web компонентов (controllers, view resolvers, handler mappings).
+
+[[WebConfig]] необходимо пометить @EnableWebMvc и @Configuration
+
+extends [[WebMvcConfigurerAdapter]]	
+
+Конфигурирует JSP resolver
+@Bean
+public ViewResolver viewResolver() {
+	InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+
+	оборачивает имя view в префикс и суффикс
+	resolver.setPrefix("/WEB-INF/views/");
+	resolver.setSuffix(".jsp");
+	
+	resolver.setExposeContextBeansAsAttributes(true);
+	
+	return resolver;
+}
+@Override
+public void configureDefaultServletHandling(
+	просим чтобы  [[DispatcherServlet]] сам не обрабатывал статичные ресурсы, а делегировал их сервлету по умолчанию в контейнере сервлетов	
+	DefaultServletHandlerConfigurer configurer) {
+	configurer.enable();
+} 
+
+

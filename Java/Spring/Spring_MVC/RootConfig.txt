@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-04-20T23:59:04+04:00
+
+====== RootConfig ======
+Created Четверг 20 Апрель 2017
+
+@ComponentScan(basePackages={"spitter"}, excludeFilters={@Filter(type=FilterType.ANNOTATION, value=EnableWebMvc.class)})
+Исключаем из сканирования классы, которые помечены аннотацией EnableWebMvc

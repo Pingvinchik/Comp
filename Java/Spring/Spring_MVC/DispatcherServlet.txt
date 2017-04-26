@@ -5,6 +5,26 @@ Creation-Date: 2017-04-20T22:29:57+04:00
 ====== DispatcherServlet ======
 Created Четверг 20 Апрель 2017
 
-Это front controller, который делегирует [[Controller|controller]]
+Это front controller, который делегирует [[Controller|controller.]]
+
+При загрузке он создает контекст и загружает бины
 
 С помощью handler mappings определяет где буде следующая остановка запроса. 
+
+Конфигурируется в web.xml или в классе extends AbstractAnnotationConfigDispatcherServletInitializer
+
+Мапит DispatcherServlet, все запросы будут приходить к нему
+@Override
+protected String[] getServletMappings() {
+	return new String[] { "/" };
+}
+Конфигурационный класс возвращаемый этим методом опрделяет ContextLoaderListener контекст
+@Override
+protected Class<?>[] getRootConfigClasses() {
+	return new Class<?>[] { RootConfig.class };
+}
+Конфигурационный класс возвращаемый этим методом опрделяет [[DispatcherServlet]] контекст, замена web.xml в Servlet 3.0. 
+@Override
+protected Class<?>[] getServletConfigClasses() {
+	return new Class<?>[] { WebConfig.class };
+}
