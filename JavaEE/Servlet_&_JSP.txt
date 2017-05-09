@@ -5,3 +5,4 @@ Creation-Date: 2017-04-06T23:04:11+04:00
 ====== Servlet & JSP ======
 Created Четверг 06 Апрель 2017
 
+JSP (JavaServer Pages) is a Java technology for creating dynamic web pages which is deployed by a servlet container. Both are run server-side and require a webhost of some kind (e.g., Tomcat). At runtime, jsp files will be compiled into servlets and executed when requested. It is comparable to languages such as PHP or ASP. JSP can be described as a technology for changing the contents of a page.

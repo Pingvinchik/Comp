@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-05-07T18:27:29+04:00
+
+====== Annotations ======
+Created Воскресенье 07 Май 2017
+
+[[RetentionPolicy]]
+
+Source - аннотация видна только в source, в байт коде ее не будет, пример @Overrride 
+Class - должна попасть в байт код, но ее невозможно будет считать в runtime через reflection
+Runtime - видный в runtime и можно считать через reflection

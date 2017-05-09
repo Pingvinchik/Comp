@@ -5,4 +5,9 @@ Creation-Date: 2017-04-16T18:29:20+04:00
 ====== DI ======
 Created Воскресенье 16 Апрель 2017
 
+1. Парсинг XML  - получаем bean definitions
+2. [[BeanFactoryPostProcessor]] - производят манипуляции над bean definitions
+3. [[BeanPostProcessor]] - создается объект -> beforeInit -> init -> afterInit
+
+
 По умолчанию все бины singleton

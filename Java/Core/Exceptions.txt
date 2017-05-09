@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-05-08T12:46:40+04:00
+
+====== Exceptions ======
+Created Понедельник 08 Май 2017
+
+Если имплементируется интерфейс, который не выкидывает exception, то класс тоже не может выкидывать.

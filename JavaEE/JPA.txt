@@ -5,3 +5,16 @@ Creation-Date: 2017-04-06T23:02:06+04:00
 ====== JPA ======
 Created Четверг 06 Апрель 2017
 
+Спецификация Java SE и Java EE описывает правила и API для системы управления сохранением java объектов в таблицы реляционных баз данных в удобном виде.  Это технология, обеспечивающая объектно-реляционное отображение простых JAVA объектов и предоставляющая API для сохранения, получения и управления такими объектами.
+
+Сам JPA не умеет ни сохранять, ни управлять объектами, JPA только определяет правила игры: как что-то будет действовать. JPA также определяет интерфейсы, которые должны будут быть реализованы провайдерами. Плюс к этому JPA определяет правила о том, как должны описываться метаданные отображения и о том, как должны работать провайдеры. Дальше, каждый провайдер, реализуя JPA определяет получение, сохранение и управление объектами. У каждого провайдера реализация разная.
+
+JPA is the EE standard specification for ORM in Java EE
+JPA is the dance, Hibernate is the dancer.
+
+EntityManager это интерфейс, который описывает API для всех основных операций над Enitity, получение данных и других сущностей JPA. По сути главный API для работы с JPA. Основные операции:
+1) Для операций над Entity: persist (добавление Entity под управление JPA), merge (обновление), remove (удаления), refresh (обновление данных), detach (удаление из управление JPA), lock (блокирование Enity от изменений в других thread),
+2) Получение данных: find (поиск и получение Entity), createQuery, createNamedQuery, createNativeQuery, contains, createNamedStoredProcedureQuery, createStoredProcedureQuery
+3) Получение других сущностей JPA: getTransaction, getEntityManagerFactory, getCriteriaBuilder, getMetamodel, getDelegate
+4) Работа с EntityGraph: createEntityGraph, getEntityGraph
+4) Общие операции над EntityManager или всеми Entities: close, isOpen, getProperties, setProperty, clear
