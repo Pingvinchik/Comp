@@ -9,7 +9,7 @@ Created Четверг 20 Апрель 2017
 
 [[WebConfig]] необходимо пометить @EnableWebMvc и @Configuration
 
-extends [[WebMvcConfigurerAdapter]]	
+extends WebMvcConfigurerAdapter	
 
 Конфигурирует JSP resolver
 @Bean

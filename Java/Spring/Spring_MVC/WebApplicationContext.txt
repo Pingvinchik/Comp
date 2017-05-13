@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-05-13T23:03:19+04:00
+
+====== WebApplicationContext ======
+Created Суббота 13 Май 2017
+
+Интерфейс, который обеспечивает конфигурацию веб приложения (аналогично servlet context)
+
+Хранит реализации таких интерфейсов как: Handler Mapping (определяет какой вид запроса куда отправится), View Resolver (определяет какое представления нужно использовать для отображения), Controller
+
+Виды:
+Xml - [[XmlWebApplicationContext]] (web.xml)
+Java - AnnotationConfigWebApplicationContext

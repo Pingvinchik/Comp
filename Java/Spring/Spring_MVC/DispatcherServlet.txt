@@ -5,11 +5,11 @@ Creation-Date: 2017-04-20T22:29:57+04:00
 ====== DispatcherServlet ======
 Created Четверг 20 Апрель 2017
 
-Это front controller, который делегирует [[Controller|controller.]]
+Это front controller pattern, который делегирует [[Controller|controller.]]
 
-При загрузке он создает контекст и загружает бины
+При загрузке инициализирует [[WebApplicationContext]] у каждого экземпляра свой контекст.
 
-С помощью handler mappings определяет где буде следующая остановка запроса. 
+Реализует определенную версию контекста
 
 Конфигурируется в web.xml или в классе extends AbstractAnnotationConfigDispatcherServletInitializer
 

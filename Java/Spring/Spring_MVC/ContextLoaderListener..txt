@@ -2,6 +2,7 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 Creation-Date: 2017-04-20T23:22:46+04:00
 
-====== ContextLoaderListener. ======
+====== ContextLoaderListener ======
 Created Четверг 20 Апрель 2017
 
+Инициализирует [[WebApplicationContext]]

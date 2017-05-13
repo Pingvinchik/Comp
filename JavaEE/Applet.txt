@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-05-13T22:33:22+04:00
+
+====== Applet ======
+Created Суббота 13 Май 2017
+
