@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-04-20T23:22:46+04:00
+
+====== ContextLoaderListener ======
+Created Четверг 20 Апрель 2017
+
+Загружает ApplicationContext (Root Context), в котором содержаться глобальные ресурсы (@Service, @Repository, DataSoutce, EntityManagerFactory)
+
+Также позволяет не писать явно код для создания контекста т.к. он сам его создает
+
+В обычных веб приложениях присутствует только root context, который грузиться ContextLoaderListener

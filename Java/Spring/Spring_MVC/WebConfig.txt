@@ -26,7 +26,7 @@ public ViewResolver viewResolver() {
 }
 @Override
 public void configureDefaultServletHandling(
-	просим чтобы  [[DispatcherServlet]] сам не обрабатывал статичные ресурсы, а делегировал их сервлету по умолчанию в контейнере сервлетов	
+	просим чтобы  [[Context:DispatcherServlet]] сам не обрабатывал статичные ресурсы, а делегировал их сервлету по умолчанию в контейнере сервлетов	
 	DefaultServletHandlerConfigurer configurer) {
 	configurer.enable();
 } 

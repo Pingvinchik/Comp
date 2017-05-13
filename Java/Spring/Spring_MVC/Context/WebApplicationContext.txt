@@ -10,5 +10,5 @@ Created Суббота 13 Май 2017
 Хранит реализации таких интерфейсов как: Handler Mapping (определяет какой вид запроса куда отправится), View Resolver (определяет какое представления нужно использовать для отображения), Controller
 
 Виды:
-Xml - [[XmlWebApplicationContext]] (web.xml)
-Java - AnnotationConfigWebApplicationContext
+Xml - XmlWebApplicationContext (web.xml в нем прописываются пути к root и servlet context, в нем также можно указать чтобы брал java config)
+Java - AnnotationConfigWebApplicationContext (AbstractAnnotationConfigDispatcherServletInitializer)

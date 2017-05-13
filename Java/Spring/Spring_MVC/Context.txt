@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-05-13T23:46:41+04:00
+
+====== Context ======
+Created Суббота 13 Май 2017
+
+In Spring MVC, there are two context. One is the application context or global context which is booted up by ContextLoaderListener. It takes all the configuration file mentioned in contextConfigLocation parameter. 
+
+Now if you are are using Spring MVC also than Dispatcher servlet is required, which boots up another container which is also known as web application container. This container takes the global container as a parent. 

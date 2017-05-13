@@ -5,6 +5,8 @@ Creation-Date: 2017-04-20T22:29:57+04:00
 ====== DispatcherServlet ======
 Created Четверг 20 Апрель 2017
 
+Загружает [[WebApplicationContext]] (child of ApplicationContext или просто ServletContext)
+
 Это front controller pattern, который делегирует [[Controller|controller.]]
 
 При загрузке инициализирует [[WebApplicationContext]] у каждого экземпляра свой контекст.
