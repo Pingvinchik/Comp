@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-05-14T23:14:07+04:00
+
+====== SpringSecurityFilterChain ======
+Created Воскресенье 14 Май 2017
+
+Фильтр FilterChainProxy, который объединяет доп фильтры

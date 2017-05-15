@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-05-14T23:04:53+04:00
+
+====== DelegatingFilterProxy ======
+Created Воскресенье 14 Май 2017
+
+Прописывается либо в web.xml либо в extends AbstractSecurityWebApplicationInitializer
+
+После того как он прописан, он принимает все запросы и дилегирует их [[SpringSecurityFilterChain]]
