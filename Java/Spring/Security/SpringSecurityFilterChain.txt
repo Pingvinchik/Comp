@@ -6,3 +6,5 @@ Creation-Date: 2017-05-14T23:14:07+04:00
 Created Воскресенье 14 Май 2017
 
 Фильтр FilterChainProxy, который объединяет доп фильтры
+
+@EnableGlobalMethodSecurity(securedEnabled = true) - позволяет использовать аннотации для определения прав доступа + нужно  extends GlobalMethodSecurityConfiguration

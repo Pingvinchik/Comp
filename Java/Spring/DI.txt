@@ -9,7 +9,39 @@ Created Воскресенье 16 Апрель 2017
 2. BeanFactoryPostProcessor - производят манипуляции над bean definitions
 3. BeanPostProcessor - создается объект -> beforeInit -> init -> afterInit
 
-
 По умолчанию все бины singleton
 
-В случае если объект создан с помощью new Spring не сможет инжектить в него.
+В случае если объект создан с помощью new Spring не сможет инжектить в него. Для этого плохо ипсользовать выдергивание бина из контекста напрямую.
+
+Плохо использовать @Autowired полей:
+1. При создании объекта поле будет null, если в конструкторе, то при создании нужно будет обязательно указать зависимость
+2. You cannot create immutable objects as with constructor injection
+3. Your classes have tight coupling with DI container and cannot be used outside of it
+4. Your classes cannot be instantiated (for example in unit tests) wthout reflection, you need DI container to instantiate them, which is more like integration tests
+5. Your real dependencies are hidden from the outside and are not reflected in your interface - constructors or methods
+6. It is really easy to have like 10 dependencies. If you were using constructor injection, having constructor with 10 arguments will signal that something is fishy. But you can add injected fields using field injection indefinitely. Having too many dependencies is a red flag that the class usually does more than one thing and it may be a violation of a Single Responsibility Principle.
+
+Например используя Lombok
+
+@RequiredArgsConstructor(onConstructor = @__(@Inject))
+class MyComponent {
+    
+  private final @NonNull MyCollaborator collaborator;
+
+  public void myBusinessMethod() {
+	collaborator.doSomething();
+  }
+}
+
+For mandatory dependencies or when aiming for mutability, use Constructor injection
+For optional or changeable dependencies use setter injection
+Avoid field injection in most of the cases.
+
+Field injection:
+++ less code to write
+-- unsafe code
+ - more complicated to test
+Constructor injection:
+++ safe code
+ - more code to write (see the hint to Lombok)
+ + easy to test

@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-05-21T16:21:39+04:00
+
+====== Messaging ======
+Created Воскресенье 21 Май 2017
+
+Asynchronous messaging is a way of indirectly sending messages from one application to another without waiting for a response.
+
+**JMS**
+
+**WebSocket** is a protocol providing full-duplex communication across a single
+socket. It enables, among other things, asynchronous messaging between a web
+browser and a server. Being full-duplex means that the server can send messages to
+the browser as well as the browser sending messages to the server.

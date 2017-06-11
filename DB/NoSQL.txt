@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-05-21T00:41:03+04:00
+
+====== NoSQL ======
+Created Воскресенье 21 Май 2017
+
+**Document:** MongoDB
+Document databases aren’t well-tuned for storing data where there’s any significant
+degree of relationships. A social network, for example, represents how different
+users of an application relate to each other and isn’t best kept in a document data-
+base. Even though it’s not impossible to store relation-rich data in a document
+database, you’ll find more challenge than benefit in doing so.
+
+**Graph: **Neo4j
+
+**Key-Value:** Redis

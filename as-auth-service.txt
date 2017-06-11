@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-05-21T14:20:39+04:00
+
+====== as-auth-service ======
+Created Воскресенье 21 Май 2017
+
+TODO:
+1. Not Found Http Status Code
+
+реализовать в ExceptionHandler, а в контроллере выбрасывать эксепшн
+HttpStatus status = spittle != null ?
+HttpStatus.OK : HttpStatus.NOT_FOUND;
+return new ResponseEntity<Spittle>(spittle, status);
+
+like this:
+@ExceptionHandler(SpittleNotFoundException.class)
+@ResponseStatus(HttpStatus.NOT_FOUND)
+public @ResponseBody Error spittleNotFound(SpittleNotFoundException e) {
+
+2. GraphQL inter-service communication
+
+3. Переделать uniRest 
+RestTemplate rest = new RestTemplate();
+return rest.getForObject("http://graph.facebook.com/{spitter}",
+Profile.class, id);
+
+чтобы не обрабатывать эксепшены.

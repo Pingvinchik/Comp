@@ -7,4 +7,4 @@ Created Воскресенье 14 Май 2017
 
 Прописывается либо в web.xml либо в extends AbstractSecurityWebApplicationInitializer
 
-После того как он прописан, он принимает все запросы и дилегирует их [[SpringSecurityFilterChain]]
+После того как он прописан, он принимает все запросы и дилегирует их [[Security:SpringSecurityFilterChain]]

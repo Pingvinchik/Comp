@@ -10,9 +10,15 @@ Created Воскресенье 16 Апрель 2017
 @Component - помечает класс как bean. Нужен при сканировании. Альтернатива @Named
 	аргумент может принимать name 
 	
-@Service - аналогично @Component, но для уровня сервисов
+@Service - аналогично @Component, но для уровня сервисов 
 
-@Repository  - аналогично, предназначено для DAO
+@RestController - marks the class as a controller where every method returns a domain object instead of a view. It’s shorthand for @Controller and @ResponseBody rolled together, and ResponseEntity<> not needed
+
+@ResponeBody - to bypass view-based rendering.
+
+@Repository  - аналогично, предназначено для DAO catch platform-
+specific exceptions and rethrow them as one of Spring’s unified unchecked excep-
+tions
 	
 @Import - для объединения нескольких конфигурационных классов
 
@@ -40,4 +46,9 @@ Created Воскресенье 16 Апрель 2017
 
 @ControllerAdvice - для использования обработчиков исключений не только для отельных controller, а для всего приложения в целом.
 
+@Cacheable - помечается метод и перед его выполнением просматривается кэш, в случае если в кэше нет значения вызывается метод и результат попадает в кэш.
+
+@CachePut - возвращаемое значение должно попасть в кэш, метод вызывается всегда.
+
+@CacheEvict - удаляет из кэша.
 

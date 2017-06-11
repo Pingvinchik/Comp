@@ -5,3 +5,7 @@ Creation-Date: 2017-04-06T23:02:36+04:00
 ====== HTTP ======
 Created Четверг 06 Апрель 2017
 
+Idempotent methods that can be called many times without different outcomes:
+- GET
+- PUT (not safe)
+- DELETE (not safe)

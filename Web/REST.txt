@@ -5,3 +5,17 @@ Creation-Date: 2017-04-06T23:03:28+04:00
 ====== REST ======
 Created Четверг 06 Апрель 2017
 
+Whereas SOAP typically focused on actions and processing, REST ’s concern is with the data being handled.
+
+Certainly, SOAP can be overkill for many applications, and REST brings a simpler alternative. 
+Moreover, many modern applications have mobile and rich JavaScript clients that consume REST API s running on a server.
+
+A mistake that’s often made when approaching REST is to think of it as “web services with URL s”—to think of REST as another remote procedure call ( RPC ) mechanism, like SOAP , but invoked through plain HTTP URL s and without SOAP ’s hefty XML namespaces.
+On the contrary, REST has little to do with RPC . Whereas RPC is service oriented and focused on actions and verbs, REST is resource oriented, emphasizing the things and nouns that comprise an application
+
+Put more succinctly, REST is about transferring the state of resources—in a representa-
+tional form that is most appropriate for the client or server—from a server to a client
+(or vice versa).
+Resources in REST are identified and located with URL s. There are no strict rules
+regarding REST ful URL structure, but the URL should identify a resource, not bark a
+command to the server. Again, the focus is on things, not actions.

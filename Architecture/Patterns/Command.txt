@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-06-11T12:05:09+04:00
+
+====== Command ======
+Created Воскресенье 11 Июнь 2017
+
+Позволяет отвязать того кто запрашивает выполнение действия (Invoker) от объекта, который это действие выполняет (Reciever).
+
+Интерфейс команда с методом  execute, его реализуют все команды. В конструктор каждой команды передается объект, у которого должна эта команды вызваться.
+
+Можно хранить предыдущее состояние объекта между действия для undo. Или хранить стэк всех комманд и у каждой вызывать undo.
+Можно накидывать набор команд (поле лист) и выполнять их как макрос.
+
+Т.е. создается команды и ей передается объект, у которого будет выполняться
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+So, in summary, the pattern encapsulates everything required to take an action and allows the execution of the action to occur completely independently of any of that context.
+If that is not a requirement for you then the pattern is probably not helpful for your problem space.
+
+You don't have to. Design patterns are simply guidelines that some people in the past have found useful when writing applications of significant complexity.
+In your case, if what you have to do is turn the light switch on and off, and not much else, the second option is a no brainer.
+
+Like most design patterns, the Command Pattern comes into its own where things get a little more complex. It is also well know, so helps make your code clearly to most programmers.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Lets look at it like: When client wants the receiver to execute some task, then client has two options,
+
+Call Receiver and tell him to execute the task.
+Call some third party who knows receiver, and third party will pass the message to receiver.
+First option looks better, as think of scenario, when there is no waiter to take order in restaurant and you have to go to chef to tell him what you want.
+
+OR suppose you lost your remote and you have to go to TV and manually switch the button.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Example: http://alvinalexander.com/java/java-command-design-pattern-in-java-examples
+https://www.youtube.com/watch?v=7Pj5kAhVBlg

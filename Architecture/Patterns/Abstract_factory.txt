@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-06-06T23:16:00+04:00
+
+====== Abstract factory ======
+Created Вторник 06 Июнь 2017
+
+Предоставляет интерфейс для создания зависимых объектов не указывая конкретный класс.
+
+Через композицию.
+
+Фабрика фабрик
+
+Like whatsisname said, I believe this is case of cargo cult software design. Factories, especially the abstract kind, are only usable when your module creates multiple instances of a class and you want to give user of this module ability to specify what type to create. This requirement is actually quite rare, because most of the time you just need one instance and you can just pass that instance directly instead of creating an explicit factory.
+
+And factories become obsolete when you introduce IoC framework, because IoC is just a kind of factory. And many IoC frameworks are able to create implementations of specific factories.
+
+
+
+The Factory pattern vogue stems from an almost-dogmatic belief among coders in "C-style" languages (C/C++, C#, Java) that use of the "new" keyword is bad, and should be avoided at all costs (or at least centralized). This, in turn, comes from an ultra-strict interpretation of the Single Responsibility Principle (the "S" of SOLID), and also of the Dependency Inversion Principle (the "D"). Simply stated, the SRP says that ideally a code object should have one "reason to change", and one only; that "reason to change" is the central purpose of that object, its "responsibility" in the codebase, and anything else that requires a change to code should not require opening up that class file. The DIP is even simpler; a code object should never be dependent upon another concrete object, but instead on an abstraction.
+
+Case in point, by using "new" and a public constructor, you are coupling the calling code to a specific construction method of a specific concrete class. Your code now has to know that a class MyFooObject exists, and has a constructor that takes a string and an int. If that constructor ever needs more information, all usages of the constructor have to be updated to pass in that information including the one you're writing now, and therefore they are required to have something valid to pass in, and so they must either have it or be changed to get it (adding more responsibilities to the consuming objects). In addition, if MyFooObject is ever replaced in the codebase by BetterFooObject, all usages of the old class have to change to construct the new object instead of the old one.
+
+So, instead, all consumers of MyFooObject should be directly dependent on "IFooObject", which defines the behavior of implementing classes including MyFooObject. Now, consumers of IFooObjects can't just construct an IFooObject (without having the knowledge that a particular concrete class is an IFooObject, which they don't need), so instead they must be given an instance of an IFooObject-implementing class or method from outside, by another object that has the responsibility of knowing how to create the correct IFooObject for the circumstance, which in our parlance is usually known as a Factory.
+
+Now, here's where theory meets reality; an object can never be closed to all types of change all the time. Case in point, IFooObject is now an additional code object in the codebase, which must change whenever the interface required by consumers or implementations of IFooObjects change. That introduces a new level of complexity involved in changing the way objects interact with each other across this abstraction. In addition, consumers will still have to change, and more deeply, if the interface itself is replaced by a new one.
+
+A good coder knows how to balance YAGNI ("You Ain't Gonna Need It") with SOLID, by analyzing the design and finding places that are very likely to have to change in a particular way, and refactoring them to be more tolerant of that type of change, because in that case "you are gonna need it".
+
+
+When using a factory your code is still actually responsible for creating objects. By DI you outsource that responsibility to another class or a framework, which is separate from your code.
+
+You pretty much hit the nail on the head.
+
+Dependency injection is a great choice when you want to get dependencies that are known and unchanging at runtime or compile-time, depending on how you configure. Let's assume that you have a mailer in your application implemented by IMailer and you can use a TextBasedMailer or HtmlBasedMailer. You either build the application or use a configuration file to tell the DI framework what implementation to use.
+
+Now, let's say that the IMailer to use depends on a preference for a user. Some users want plaintext e-mails, other HTML. The moment you request the IMailer instance you need some kind of logic to determine what mailer to resolve to. This logic would probably be isolated in a class and at that point you are pretty much using the Factory pattern, even if you are not calling it that.
+
+Note that these two are not mutually exclusive. For example, let's say your application can mail attachments in a user-chosen format. You would implement different IAttachmentGenerators such as PdfAttachmentGenerator, HtmlAttachmentGenerator, WordAttachmentGenerator,... You could have an AttachmentFactory that gets the list of IAttachmentGenerators via DI and resolves the correct Generator to use based on the user preference. In this case, you are using DI AND a factory.

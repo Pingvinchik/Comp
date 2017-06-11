@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-05-18T23:58:40+04:00
+
+====== Database ======
+Created Четверг 18 Май 2017
+
+Предоставляет templates. Например т.к. JDBC вынуждает писать много лишнего кода(закрывать подключение и ловить исключения).
+
+DataSource можно поулучить через:
+1. JDBC драйвер
+2. JNDI lookup
+3. Pool connection 

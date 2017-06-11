@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-06-11T12:17:19+04:00
+
+====== Singleton ======
+Created Воскресенье 11 Июнь 2017
+
+Private constructor
