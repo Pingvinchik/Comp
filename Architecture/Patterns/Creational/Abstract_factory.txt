@@ -27,7 +27,7 @@ Now, here's where theory meets reality; an object can never be closed to all typ
 
 A good coder knows how to balance YAGNI ("You Ain't Gonna Need It") with SOLID, by analyzing the design and finding places that are very likely to have to change in a particular way, and refactoring them to be more tolerant of that type of change, because in that case "you are gonna need it".
 
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 When using a factory your code is still actually responsible for creating objects. By DI you outsource that responsibility to another class or a framework, which is separate from your code.
 
 You pretty much hit the nail on the head.

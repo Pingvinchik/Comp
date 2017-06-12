@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-06-11T17:47:42+04:00
+
+====== Interface ======
+Created Воскресенье 11 Июнь 2017
+
+All fields in interface are public static final, i.e. they are constants.
+
+It is generally recommended to avoid such interfaces, but sometimes you can find an interface that has no methods and is used only to contain list of constant values.
+
+An interface defines a contract that some implementation will fulfill for you.
+
+An abstract class provides a default behavior that your implementation can reuse.

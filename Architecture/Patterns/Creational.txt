@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-06-11T17:39:47+04:00
+
+====== Creational ======
+Created Воскресенье 11 Июнь 2017
+

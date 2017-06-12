@@ -5,3 +5,4 @@ Creation-Date: 2017-06-08T00:13:58+04:00
 ====== SOLID ======
 Created Четверг 08 Июнь 2017
 
+Single resoinsobility

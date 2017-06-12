@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-06-12T09:34:04+04:00
+
+====== Iterator ======
+Created Понедельник 12 Июнь 2017
+
+Позволяет получить последовательный доступ к элемента коллекции без знания ее конкретной реализации. 
+
+Интерфейс Iterator - > ConcreteIterator (реализуется как внутренний класс concreteAggregate)
+Интерфейс Aggregate (getIterator) - > ConcreteAggregate (получает конкретный итератор)

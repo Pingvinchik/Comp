@@ -11,4 +11,6 @@ Created Четверг 20 Апрель 2017
 
 Передача входных параметров:
 1. @RequestParam("id") String id  /spittles/show?spittle_id=12345  
-2. @PathVariable("id") long id  для этого в пути указываем "/{id}" (используется для REST)  /spittles/12345
+2. @PathVariable("id") long id  для этого в пути указываем "/{id}" (используется для REST)  [[/spittles/12345]]
+
+Если используется POST, то @RequestBody 
