@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-06-12T13:13:37+04:00
+
+====== State ======
+Created Понедельник 12 Июнь 2017
+
+Позволяет объекту менять свое поведение когда его внутренее состяние меняется
+
+Класс контекст хранит состояние и имеет метод вызывающий действие у этого состояния. Состояние может меняться: 1)в контексте 2)состояние может меняться в самом состоянии по условию.
+Состояние имплементирует интерфейс.
+
+Внешне похож на Strategy.
+
+In general, think of the Strategy Pattern as a flexible alternative to subclassing; if you use inheritance to define the behavior of a class,
+then you’re stuck with that behavior even if you need to change it. With Strategy you can change the behavior by composing with a different object.
+
+Think of the State Pattern as an alternative to putting lots of conditionals in your context; by encapsulating the behaviors within state objects, 
+you can simply change the state object in context to change its behavior
+
+As a general guideline, when the state transitions are fixed they are appropriate for putting in the Context;
+however,when the transitions are more dynamic, they are typically placed in the state classes themselves.
+The disadvantage of having state transitions in the state classes is that we create dependencies between the state classes. 
+try to minimize this by using getter methods on theContext, rather than hardcoding explicit concrete state classes

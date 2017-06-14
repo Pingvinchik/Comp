@@ -19,3 +19,5 @@ Created Воскресенье 09 Апрель 2017
 
 
 Curgo cult - use patterns when there is no use of them, or useless comments.
+
+You never want to start out with the intention of using patterns just for the sake of it.

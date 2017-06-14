@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-06-12T15:58:21+04:00
+
+====== Proxy ======
+Created Понедельник 12 Июнь 2017
+
+Контролирует доступ к объекту перехватывая все вызовы
+
+Decorator Pattern focuses on dynamically adding functions to an object, while Proxy Pattern focuses on controlling access to an object.
+
+Relationship between a Proxy and the real subject is typically set at compile time, Proxy instantiates it in some way, whereas Decorator is assigned to the subject at runtime, knowing only subject's interface.
+
+Виды: 
+
+- Протоколирующий прокси: сохраняет в лог все вызовы «Субъекта» с их параметрами.
+
+- Удалённый заместитель (англ. remote proxies): обеспечивает связь с «Субъектом», который находится в другом адресном пространстве или на удалённой машине. Также может отвечать за кодирование запроса и его аргументов и отправку закодированного запроса реальному «Субъекту»,
+
+- Виртуальный заместитель (англ. virtual proxies): обеспечивает создание реального «Субъекта» только тогда, когда он действительно понадобится. 
+
+- Защищающий заместитель (англ. protection proxies): может проверять, имеет ли вызывающий объект необходимые для выполнения запроса права.
+
+- Кэширующий прокси: обеспечивает временное хранение результатов расчёта до отдачи их множественным клиентам, которые могут разделить эти результаты.
+
+- Экранирующий прокси: защищает «Субъект» от опасных клиентов (или наоборот).
