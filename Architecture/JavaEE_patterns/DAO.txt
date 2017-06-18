@@ -5,3 +5,6 @@ Creation-Date: 2017-06-13T23:26:05+04:00
 ====== DAO ======
 Created Вторник 13 Июнь 2017
 
+Это объект, который предоставляет абстрактный интерфейс к какому-либо типу базы данных или механизму хранения
+
+https://www.ibm.com/developerworks/ru/library/j-genericdao/index.html

@@ -5,3 +5,9 @@ Creation-Date: 2017-06-05T20:58:09+04:00
 ====== Inversion of Control ======
 Created Понедельник 05 Июнь 2017
 
+Варианты:
+
+1. Шаблон "Фабрика" (англ. Factory pattern)
+2. Service locator (англ.)русск.
+3. Внедрение зависимости (англ. Dependency injection)
+4. Контекстный поиск (англ. contextualized lookup)

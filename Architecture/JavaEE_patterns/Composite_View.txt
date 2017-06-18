@@ -1,7 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2017-06-13T23:25:57+04:00
-
-====== Composite View ======
-Created Вторник 13 Июнь 2017
-

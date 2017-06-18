@@ -5,3 +5,6 @@ Creation-Date: 2017-06-13T23:27:08+04:00
 ====== Transfer Object ======
 Created Вторник 13 Июнь 2017
 
+Используется для передачи данных между подсистемами приложения. Data Transfer Object, в отличие от business object или data access object не должен содержать какого-либо поведения
+
+Use a Transfer Object to encapsulate the business data. A single method call is used to send and retrieve the Transfer Object. When the client requests the enterprise bean for the business data, the enterprise bean can construct the Transfer Object, populate it with its attribute values, and pass it by value to the client.

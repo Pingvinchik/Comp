@@ -1,0 +1,60 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-06-17T23:56:45+04:00
+
+====== mvn ======
+Created Суббота 17 Июнь 2017
+
+Dockerfile настраивает окружение
+--------------------------------------------------------------------------------------------------------------------------------
+FROM ubuntu:16.04
+RUN apt-get update && apt-get -y upgrade
+RUN apt-get install -y locales && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+ENV LANG en_US.utf8
+
+RUN apt-get install -y software-properties-common
+Add a comment to this line
+RUN add-apt-repository -y ppa:webupd8team/java && apt-get update && \
+	echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
+	apt-get install -y oracle-java8-installer
+
+RUN apt-get install -y maven
+CMD mkdir /maven
+COPY maven-settings.xml /maven/
+
+ENV HOME /maven
+ENV _JAVA_OPTIONS -Duser.home=/maven
+RUN chmod 777 /maven
+
+рабочая директория в окружении
+WORKDIR /app
+RUN rm -rf [[/var/lib/apt/lists/*]]
+
+run.sh
+----------------------------------------------------------------------------------------------------------------------------------------
+#!/usr/bin/env bash
+
+Создается образ окружения из Dockerfile
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
+docker build -t as-price-api ${DIR}/dev-runtime/. > build-latest.log
+
+#Чистит папке target
+rm -rf ${DIR}/../target/*
+
+#Remove runtime container
+docker rm -f as-price-api 2>&-
+---------------------------------------------------------
+Строится проект
+docker run -u $(id -u) \
+	   --rm \
+	   -v ${DIR}/../.:/app \
+	   -v ${HOME}/.m2:/maven/.m2 \
+	   as-price-api mvn --global-settings /maven/maven-settings.xml clean install >> build-latest.log
+-----------------------------------------------------------
+Запускается контейнер с проектом
+docker run -u $(id -u) \
+	   -d \
+	   -e DNSDOCK_ALIAS=service.as-price-api.docker \
+	   --name as-price-api \
+	   -v ${DIR}/../target:/app \
+	   as-price-api java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8000 -jar priceapi-0.1.0.jar

@@ -1,0 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-06-16T00:28:42+04:00
+
+====== Clean code ======
+Created Пятница 16 Июнь 2017
+
+
+Prefer polymorphism to if/else or switch/case.
+Be consistent. If you do something a certain way, do all similar things in the same way.
+Use explanatory variables.
+Prefer dedicated value objects to primitive type.
+Avoid logical dependency. Don't write methods which works correctly depending on something else in the same class.
+Avoid negative conditionals.
+Replace magic numbers with named constants.
+
+methods:
+Prefer fewer arguments.
+Have no side effects.
+Don't use flag arguments. Split method into several independent methods that can be called from the client without the flag.
+Parameters of the Boolean type as a parameter already clearly states that it does more than one thing.
+
+Declare variables close to their usage.
+Dependent functions should be close.
+Place functions in the downward direction.  
+Better to have many functions than to pass some code into a function to select a behavior. 
+Prefer non-static methods to static methods.
+
+Code smells
+
+Rigidity. The software is difficult to change. A small change causes a cascade of subsequent changes.
+Fragility. The software breaks in many places due to a single change.
+Immobility. You cannot reuse parts of the code in other projects because of involved risks and high effort.
+Needless Complexity.
+Needless Repetition.
+Opacity. The code is hard to understand.
+
+Error handling should be planned carefully by all programmers.
+Avoid returning a NULL in methods, preferably to return an empty object.
+Avoid passing NULL to the methods; this can generate NullPointerExceptions.
+Do not inherit constants. Instead, use enums constants.
+
+Before making any kind of refactoring, it is important to have good coverage tests.
+ The language you wrote your code with should look like it was made for the problem

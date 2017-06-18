@@ -1,7 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2017-06-13T23:48:19+04:00
-
-====== Paginator ======
-Created Вторник 13 Июнь 2017
-
